@@ -60,7 +60,7 @@ export class ColurfulChangesLit extends LocalizeMixin(LitElement) {
           <ul class="flex-container">
               <li class="nav" style="background-color: grey " id="about" @click = ${
                 this.changePageContent
-              } > <fa-icon class="fas info-circle"></fa-icon> </liclass>
+              } > <fa-icon class="fas fa-info-circle"></fa-icon> </liclass>
               <li class="nav" id="groups" @click = ${
                 this.changePageContent
               } > <fa-icon class="fas fa-users"></fa-icon></li>
