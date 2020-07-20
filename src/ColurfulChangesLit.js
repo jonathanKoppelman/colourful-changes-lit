@@ -5,6 +5,7 @@ import {
   aboutTemplate,
   mapTemplate,
   cookingClubTemplate,
+  groupTemplate,
 } from './pages.template.js';
 import { colourfulChangesStyles } from './colourfulChangesLit.styles.js';
 
@@ -74,11 +75,22 @@ export class ColurfulChangesLit extends LocalizeMixin(LitElement) {
               <li class="nav"><a href="mailto:info@colourful-changes.nl"><fa-icon class="fas fa-envelope"></fa-icon></a></li>
               <li class="nav" id="lang" @click = ${
                 this.changeLanguage
-              } ><p class="text">${this.lang}</p></li>
+              } ><p class="nav-text">${this.lang}</p></li>
 
            </ul>
         </nav>
-        <p>${this.msgLit('colourful-changes:greetings')}</p>
+        <div class="banner-wrap">
+            ${
+              this.page === 'about'
+                ? html`<p class="banner-welcome">
+                    ${this.msgLit(`colourful-changes:BANNER_WELCOME`)}
+                  </p>`
+                : html``
+            }
+            <p class="banner-text">${this.msgLit(
+              `colourful-changes:BANNER_${this.page}`
+            )}</p>
+        </div>
         ${this.renderPageContent()}
       </main>
 
@@ -98,7 +110,7 @@ export class ColurfulChangesLit extends LocalizeMixin(LitElement) {
       case 'about':
         return aboutTemplate(handlers);
       case 'groups':
-        return html` <h1>groups</h1> `;
+        return groupTemplate();
       case 'cookingClub':
         return cookingClubTemplate();
       case 'location':

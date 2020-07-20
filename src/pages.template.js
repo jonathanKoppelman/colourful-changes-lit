@@ -31,20 +31,19 @@ export const aboutTemplate = handlers => html`<p class="text">
       'colourful-changes:ABOUT_LIST_ITEM_5'
     )}
   </li>
-  <li class="text text-li" id="location" @click=${handlers.viewChanged}>
-    <fa-icon class="fas fa-map-marker"></fa-icon> ${handlers.translate(
-      'colourful-changes:ABOUT_LIST_ITEM_6'
-    )}
-  </li>
+
   <section class="second-section-container margin-container">
     <div class="image-left"></div>
     <div class="card-wrapper">
+      <p>${handlers.translate('colourful-changes:ABOUT_HEADER')}:</p>
       <p class="text text-wrap">
         ${handlers.translate('colourful-changes:ABOUT_TEXT')}
         <a class="text" href=${isaPowerLink} target="_blank">ISAPower</a>
       </p>
     </div>
   </section>`;
+
+export const groupTemplate = () => html` <section class="groups"></section> `;
 
 export const mapTemplate = () =>
   html`<iframe
@@ -63,7 +62,6 @@ export const cookingClubTemplate = () => html`
     <h1>
       <div class="image-icon"></div>
       Wat is de Colourful Changes Cooking Club?
-      <collapsible-item></collapsible-item>
     </h1>
 
     <div class="second-section-container">

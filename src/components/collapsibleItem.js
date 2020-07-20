@@ -1,4 +1,6 @@
 import { LitElement, html } from 'lit-element';
+import Fontawesome from 'lit-fontawesome';
+import { colourfulChangesStyles } from '../colourfulChangesLit.styles.js';
 
 export class collapsibleItem extends LitElement {
   static get properties() {
@@ -12,10 +14,13 @@ export class collapsibleItem extends LitElement {
     super(props);
     this._isOpen = false;
   }
-  // TODO: structure ->
+
+  static get styles() {
+    return [Fontawesome, colourfulChangesStyles];
+  }
 
   render() {
-    return html`${this._isOpen ? this.open(): this.close() }`;
+    return html`${this._isOpen ? this.open() : this.close()}`;
   }
 
   toggleState() {
@@ -23,10 +28,16 @@ export class collapsibleItem extends LitElement {
   }
 
   open() {
-    return html`<fa-icon @click = ${this.toggleState} class="fas fa-plus-square"></fa-icon>`;
+    return html`<fa-icon
+      @click=${this.toggleState}
+      class="fas fa-plus-square"
+    ></fa-icon>`;
   }
 
-  close(){
-    return html`<fa-icon @click = ${this.toggleState} class="fas fa-minus-square"></fa-icon>`;
+  close() {
+    return html`<fa-icon
+      @click=${this.toggleState}
+      class="fas fa-minus-square"
+    ></fa-icon>`;
   }
 }
