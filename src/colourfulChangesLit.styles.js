@@ -98,6 +98,10 @@ export const colourfulChangesStyles = css`
     font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
     font-size: 24px;
   }
+  .li-text {
+    display: inline-block;
+    padding-left: 8px;
+  }
 
   .second-section-container {
     margin-top: 24px;

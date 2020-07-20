@@ -7,29 +7,34 @@ export const aboutTemplate = handlers => html`<p class="text">
     ${handlers.translate('colourful-changes:ABOUT_LIST')}
   </p>
   <li class="text text-li" id="groups" @click=${handlers.viewChanged}>
-    <fa-icon class="fas fa-users"> </fa-icon> ${handlers.translate(
-      'colourful-changes:ABOUT_LIST_ITEM_1'
-    )}
+    <fa-icon class="fas fa-users"> </fa-icon>
+    <p class="li-text">
+      ${handlers.translate('colourful-changes:ABOUT_LIST_ITEM_1')}
+    </p>
   </li>
   <li class="text text-li" id="groups" @click=${handlers.viewChanged}>
-    <fa-icon class="fas fa-users"> </fa-icon> ${handlers.translate(
-      'colourful-changes:ABOUT_LIST_ITEM_2'
-    )}
+    <fa-icon class="fas fa-users"> </fa-icon>
+    <p class="li-text">
+      ${handlers.translate('colourful-changes:ABOUT_LIST_ITEM_2')}
+    </p>
   </li>
   <li class="text text-li" id="groups" @click=${handlers.viewChanged}>
-    <fa-icon class="fas fa-users"></fa-icon> ${handlers.translate(
-      'colourful-changes:ABOUT_LIST_ITEM_3'
-    )}
+    <fa-icon class="fas fa-users"></fa-icon>
+    <p class="li-text">
+      ${handlers.translate('colourful-changes:ABOUT_LIST_ITEM_3')}
+    </p>
   </li>
   <li class="text text-li" id="groups" @click=${handlers.viewChanged}>
-    <fa-icon class="fas fa-users"></fa-icon> ${handlers.translate(
-      'colourful-changes:ABOUT_LIST_ITEM_4'
-    )}
+    <fa-icon class="fas fa-users"></fa-icon>
+    <p class="li-text text">
+      ${handlers.translate('colourful-changes:ABOUT_LIST_ITEM_4')}
+    </p>
   </li>
   <li class="text text-li" id="cookingClub" @click=${handlers.viewChanged}>
-    <fa-icon class="fas fa-utensils"></fa-icon> ${handlers.translate(
-      'colourful-changes:ABOUT_LIST_ITEM_5'
-    )}
+    <fa-icon class="fas fa-utensils"></fa-icon>
+    <p class="li-text text">
+      ${handlers.translate('colourful-changes:ABOUT_LIST_ITEM_5')}
+    </p>
   </li>
 
   <section class="second-section-container margin-container">
