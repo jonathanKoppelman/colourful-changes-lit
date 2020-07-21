@@ -36,11 +36,12 @@ export const colourfulChangesStyles = css`
 
   .app-footer {
     font-size: calc(12px + 0.5vmin);
-    align-items: center;
+    margin-top: 24px;
+    margin-bottom: 24px;
   }
 
   .app-footer a {
-    margin-left: 5px;
+    margin-left: 12px;
   }
 
   /* Icon */
@@ -93,14 +94,24 @@ export const colourfulChangesStyles = css`
     font-size: 20px;
     color: #484848;
   }
+
   .nav-text {
     color: #8f5418;
     font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
-    font-size: 24px;
+    font-size: 18px;
+    margin-bottom: 0;
   }
+
   .li-text {
     display: inline-block;
     padding-left: 8px;
+  }
+
+  .footer-text {
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    color: #484848;
+    font-size: 20px;
+    text-decoration: none;
   }
 
   .second-section-container {
@@ -204,5 +215,10 @@ export const colourfulChangesStyles = css`
   #lang {
     padding: 0px 20px 0px 20px;
     margin: 10px;
+  }
+
+  .country-icon {
+    width: 28px;
+    height: 28px;
   }
 `;

@@ -56,47 +56,66 @@ export class ColurfulChangesLit extends LocalizeMixin(LitElement) {
   render() {
     return html`
       <main>
-
         <nav>
           <ul class="flex-container">
-              <li class="nav" style="background-color: grey " id="about" @click = ${
-                this.changePageContent
-              } > <fa-icon class="fas fa-info-circle"></fa-icon> </liclass>
-              <li class="nav" id="groups" @click = ${
-                this.changePageContent
-              } > <fa-icon class="fas fa-users"></fa-icon></li>
-              <li class="nav" id="cookingClub" @click = ${
-                this.changePageContent
-              } > <fa-icon class="fas fa-utensils"></fa-icon></li>
-              <li class="nav" id="location" @click = ${
-                this.changePageContent
-              } > <fa-icon class="fas fa-map-marker"></fa-icon></li>
-              <li class="nav"><a href="tel:+31618915811"><fa-icon class="fas fa-phone"></fa-icon></a></li>
-              <li class="nav"><a href="mailto:info@colourful-changes.nl"><fa-icon class="fas fa-envelope"></fa-icon></a></li>
-              <li class="nav" id="lang" @click = ${
-                this.changeLanguage
-              } ><p class="nav-text">${this.lang}</p></li>
-
-           </ul>
+            <li
+              class="nav"
+              style="background-color: grey "
+              id="about"
+              @click=${this.changePageContent}
+            >
+              <fa-icon class="fas fa-info-circle"></fa-icon>
+            </li>
+            <li class="nav" id="groups" @click=${this.changePageContent}>
+              <fa-icon class="fas fa-users"></fa-icon>
+            </li>
+            <li class="nav" id="cookingClub" @click=${this.changePageContent}>
+              <fa-icon class="fas fa-utensils"></fa-icon>
+            </li>
+            <li class="nav" id="location" @click=${this.changePageContent}>
+              <fa-icon class="fas fa-map-marker"></fa-icon>
+            </li>
+            <li class="nav">
+              <a href="tel:+31618915811"
+                ><fa-icon class="fas fa-phone"></fa-icon
+              ></a>
+            </li>
+            <li class="nav">
+              <a href="mailto:info@colourful-changes.nl"
+                ><fa-icon class="fas fa-envelope"></fa-icon
+              ></a>
+            </li>
+            <li class="nav" id="lang" @click=${this.changeLanguage}>
+              <p class="nav-text">${this.lang}</p>
+              <img class="country-icon" src="../assets/images/NL.png" />
+            </li>
+          </ul>
         </nav>
         <div class="banner-wrap">
-            ${
-              this.page === 'about'
-                ? html`<p class="banner-welcome">
-                    ${this.msgLit(`colourful-changes:BANNER_WELCOME`)}
-                  </p>`
-                : html``
-            }
-            <p class="banner-text">${this.msgLit(
-              `colourful-changes:BANNER_${this.page}`
-            )}</p>
+          ${this.page === 'about'
+            ? html`<p class="banner-welcome">
+                ${this.msgLit(`colourful-changes:BANNER_WELCOME`)}
+              </p>`
+            : html``}
+          <p class="banner-text">
+            ${this.msgLit(`colourful-changes:BANNER_${this.page}`)}
+          </p>
         </div>
         ${this.renderPageContent()}
       </main>
 
-      <p class="app-footer">
-
-      </p>
+      <section class="app-footer">
+        <a href="tel:+31618915811" class="footer-text"
+          ><fa-icon class="fas fa-phone"></fa-icon>+31618915811</a
+        >
+        <a href="mailto:info@colourful-changes.nl" class="footer-text"
+          ><fa-icon class="fas fa-envelope"></fa-icon
+          >info@colourful-changes.nl</a
+        >
+        <a href="javascript:void(0);" class="footer-text"
+          ><fa-icon class="fas fa-map-marker"></fa-icon>Gondel 27 41 8243CP</a
+        >
+      </section>
     `;
   }
 
@@ -131,15 +150,17 @@ export class ColurfulChangesLit extends LocalizeMixin(LitElement) {
 
   // eslint-disable-next-line class-methods-use-this
   changeLanguage() {
-    // TODO: add cookie/local storage lang and try to read it from there to know the users pref next time they visit
     const page = document.querySelector('html');
+    const countryIcon = this.get('.country-icon');
     if (page.lang === 'en') {
       page.lang = 'nl';
       this.lang = 'NL';
+      countryIcon.setAttribute('src', '../assets/images/NL.png');
       return;
     }
     page.lang = 'en';
     this.lang = 'EN';
+    countryIcon.setAttribute('src', '../assets/images/EN.png');
   }
 
   makeNavItemActive(element) {
