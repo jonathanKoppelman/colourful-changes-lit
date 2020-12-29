@@ -3,35 +3,35 @@ import './components/collapsible-item.js';
 // import { localize } from '@lion/localize';
 const isaPowerLink = 'https://www.isapower.nl';
 // language=HTML
-export const aboutTemplate = handlers => html`<p class="text">
+export const aboutTemplate = handlers => html` <p class="text">
     ${handlers.translate('colourful-changes:ABOUT_LIST')}
   </p>
   <li class="text text-li" id="groups" @click=${handlers.viewChanged}>
-    <fa-icon class="fas fa-users"> </fa-icon>
+    <fa-icon class="fas fa-users li-icons"> </fa-icon>
     <p class="li-text">
       ${handlers.translate('colourful-changes:ABOUT_LIST_ITEM_1')}
     </p>
   </li>
   <li class="text text-li" id="groups" @click=${handlers.viewChanged}>
-    <fa-icon class="fas fa-users"> </fa-icon>
+    <fa-icon class="fas fa-users li-icons"> </fa-icon>
     <p class="li-text">
       ${handlers.translate('colourful-changes:ABOUT_LIST_ITEM_2')}
     </p>
   </li>
   <li class="text text-li" id="groups" @click=${handlers.viewChanged}>
-    <fa-icon class="fas fa-users"></fa-icon>
+    <fa-icon class="fas fa-users li-icons"></fa-icon>
     <p class="li-text">
       ${handlers.translate('colourful-changes:ABOUT_LIST_ITEM_3')}
     </p>
   </li>
   <li class="text text-li" id="groups" @click=${handlers.viewChanged}>
-    <fa-icon class="fas fa-users"></fa-icon>
+    <fa-icon class="fas fa-users li-icons"></fa-icon>
     <p class="li-text text">
       ${handlers.translate('colourful-changes:ABOUT_LIST_ITEM_4')}
     </p>
   </li>
   <li class="text text-li" id="cookingClub" @click=${handlers.viewChanged}>
-    <fa-icon class="fas fa-utensils"></fa-icon>
+    <fa-icon class="fas fa-utensils li-icons"></fa-icon>
     <p class="li-text text">
       ${handlers.translate('colourful-changes:ABOUT_LIST_ITEM_5')}
     </p>
@@ -48,7 +48,15 @@ export const aboutTemplate = handlers => html`<p class="text">
     </div>
   </section>`;
 
-export const groupTemplate = () => html` <section class="groups"></section> `;
+export const groupTemplate = handlers => html`
+  <section class="groups">
+    <h1>${handlers.translate('colourful-changes:GROUP_HEADER_1')}</h1>
+    <p class="text">${handlers.translate('colourful-changes:GROUP_TEXT_1')}</p>
+
+    <h1>${handlers.translate('colourful-changes:GROUP_HEADER_2')}</h1>
+    <p class="text">${handlers.translate('colourful-changes:GROUP_TEXT_2')}</p>
+  </section>
+`;
 
 export const mapTemplate = () =>
   html`<iframe
