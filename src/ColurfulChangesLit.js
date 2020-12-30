@@ -110,12 +110,14 @@ export class ColurfulChangesLit extends LocalizeMixin(LitElement) {
                 ><fa-icon class="fas fa-envelope"></fa-icon
               ></a>
             </li>
+
             <li class="nav" id="lang" @click=${this.changeLanguage}>
               <p class="nav-text">${this.lang}</p>
               <img class="country-icon" src="../assets/images/NL.png" />
             </li>
           </ul>
         </nav>
+
         <div class="banner-wrap">
           ${this.page === 'about'
             ? html`<p class="banner-welcome">

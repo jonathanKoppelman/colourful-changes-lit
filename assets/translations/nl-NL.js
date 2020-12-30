@@ -3,6 +3,7 @@ export default {
   BANNER_about: 'Colourful changes',
   BANNER_groups: 'Eetstoornissen & Eetproblematiek',
   BANNER_cookingClub: 'Colourful changes cooking club',
+  BANNER_location: 'Vind ons',
   ABOUT_LIST:
     'Colourful Changes biedt hulp aan zowel kinderen, jeugdige en volwassenen. Je kan bij Colourful Changes terecht voor hulp en coaching bij:',
   ABOUT_LIST_ITEM_1: 'Eetproblematiek',
