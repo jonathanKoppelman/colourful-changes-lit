@@ -107,6 +107,11 @@ export const colourfulChangesStyles = css`
     padding-left: 8px;
   }
 
+  .li-icons {
+    width: 30px;
+    height: 30px;
+  }
+
   .footer-text {
     font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
     color: #484848;
@@ -180,7 +185,7 @@ export const colourfulChangesStyles = css`
 
   .groups {
     min-height: 300px;
-    background-color: lightpink;
+    /*background-color: lightpink;*/
     /*z-index: 100;*/
     /*position: relative;*/
     width: 100%;
@@ -220,5 +225,10 @@ export const colourfulChangesStyles = css`
   .country-icon {
     width: 28px;
     height: 28px;
+  }
+
+  .fa-users::before {
+    width: 30px;
+    height: 30px;
   }
 `;

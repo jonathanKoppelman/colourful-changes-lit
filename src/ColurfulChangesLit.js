@@ -57,40 +57,67 @@ export class ColurfulChangesLit extends LocalizeMixin(LitElement) {
     return html`
       <main>
         <nav>
-          <ul class="flex-container">
+          <ul class="flex-container" role="list">
             <li
               class="nav"
+              role="listitem"
+              tabindex="0"
               style="background-color: grey "
               id="about"
               @click=${this.changePageContent}
             >
               <fa-icon class="fas fa-info-circle"></fa-icon>
             </li>
-            <li class="nav" id="groups" @click=${this.changePageContent}>
+
+            <li
+              class="nav"
+              id="groups"
+              role="listitem"
+              tabindex="0"
+              @click=${this.changePageContent}
+            >
               <fa-icon class="fas fa-users"></fa-icon>
             </li>
-            <li class="nav" id="cookingClub" @click=${this.changePageContent}>
+
+            <li
+              class="nav"
+              id="cookingClub"
+              role="listitem"
+              tabindex="0"
+              @click=${this.changePageContent}
+            >
               <fa-icon class="fas fa-utensils"></fa-icon>
             </li>
-            <li class="nav" id="location" @click=${this.changePageContent}>
+
+            <li
+              class="nav"
+              id="location"
+              role="listitem"
+              tabindex="0"
+              @click=${this.changePageContent}
+            >
               <fa-icon class="fas fa-map-marker"></fa-icon>
             </li>
+
             <li class="nav">
               <a href="tel:+31618915811"
                 ><fa-icon class="fas fa-phone"></fa-icon
               ></a>
             </li>
+
             <li class="nav">
               <a href="mailto:info@colourful-changes.nl"
                 ><fa-icon class="fas fa-envelope"></fa-icon
               ></a>
             </li>
+
             <li class="nav" id="lang" @click=${this.changeLanguage}>
               <p class="nav-text">${this.lang}</p>
               <img class="country-icon" src="../assets/images/NL.png" />
             </li>
           </ul>
         </nav>
+
         <div class="banner-wrap">
           ${this.page === 'about'
             ? html`<p class="banner-welcome">
@@ -129,7 +156,7 @@ export class ColurfulChangesLit extends LocalizeMixin(LitElement) {
       case 'about':
         return aboutTemplate(handlers);
       case 'groups':
-        return groupTemplate();
+        return groupTemplate(handlers);
       case 'cookingClub':
         return cookingClubTemplate();
       case 'location':
